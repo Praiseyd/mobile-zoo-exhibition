@@ -1,0 +1,179 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Mobile Zoo Exhibition</title>  
+    <link rel="stylesheet" href="zoo.css">  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>  
+<body>  
+    <div class="menu">  
+    <input type="checkbox" id="menu-toggle">  
+    <div class="menu-logo">  
+        <div class="zoo-logo">Mobile Zoo Exhibition  </div>
+        <a href="contact.html" class="buttons2">Book now</a>
+        <label for="menu-toggle"></label>  
+    </div>  <div class="items">  
+        <a href="zoo.html" class="item">Home</a>
+    <a href="zoo.html#services" class="item">Services</a>  
+    <a href="zoo.html#story" class="item">Our Story</a>  
+    <a href="zoo.html#gallery" class="item">Gallery</a>  
+    <a href="team.html" class="item">Team</a>  
+    <a href="contact.html" class="item">Contact</a>  
+</div>
+</div>
+
+<section class="team1">
+    <div class="intro4">
+        <h1>Meet Our Team</h1>
+    </div>
+        
+    Our certified professionals are passionate about animals and committed to providing safe, engaging, and high-quality mobile zoo exhibition experiences.
+</section>
+
+<section class="team2">
+    <div class="services">
+        <h2 >The Mobile Zoo Family</h2>
+    </div>
+        
+    
+    <div class="into5">
+        Every member of our team is hand-picked for their expertise, patience, and genuine love for animals
+    </div>
+    
+<div class="gallery2">
+        <div class="pic-text">
+            <img src="Lanre.jpg" alt="">
+            <h3>Lanre Williams</h3>
+            <p class="pic-title">
+                Founder & Animal Specialist
+            </p>
+            <p class="pic-texts">
+                With over 10 years of experience working with domestic and exotic animals, Lanre founded our Mobile Zoo Exhibition to create safe, educational, and unforgettable wildlife experiences for schools and events.
+            </p>
+        </div>
+        
+        <div class="pic-text">
+            <img src="Jeffery.jpg" alt="">
+            <h3>Jeffery Silleth</h3>
+            <p class="pic-titles">
+                Senior Animal Specialist
+            </p>
+            <p class="pic-texts">
+                A certified animal care specialist with extensive experience in wildlife handling and educational exhibitions. Jeffery brings professionalism, safety, and engaging presentation skills to every mobile zoo event.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<section class="team4">
+    <div class="services">
+    <h2>Ready to Experience the Mobile Zoo?</h2>
+</div>
+<div class="into3">Book an exhibition today and give children, schools, and families an unforgettable wildlife learning experience. First-time bookings enjoy special discounts!</div>
+<div class="contact">
+    <button class="call-btn"><a href="tel:08036482942" class="call-btn" >
+      <i class="fa-solid fa-phone"></i>
+      08036482942</a>  </div></button>
+</section>
+
+
+<footer class="end">
+    <div class="service2">
+        <h3>Mobile Zoo Exhibition </h3> 
+    </div>
+    <div class="into4">Mobile zoo exhibition services creating unforgettable wildlife experiences through safe, educational, and interactive animal encounters since 2015.</div>
+    
+    <div class="icons">
+        <a href="https://instagram.com/mobilezooexhibition" target="_blank" class="insta-link">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+<a href="https://facebook.com/mobilezooexhibition" target="_blank" class="insta-link">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+<a href="https://tiktok.com/mobilezooexhibition" target="_blank" class="insta-link">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+</div>
+
+<div class="footer-container">
+
+    <div class="footer-column">
+      <h3>Services</h3>
+      <a href="zoo.html#services">Full Zoo Experience</a>
+      <a href="zoo.html#services">Petting Zoo</a>
+      <a href="zoo.html#services">World of Fishes</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Company</h3>
+      <a href="zoo.html#story">About Us</a>
+      <a href="zoo.html#gallery">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Support</h3>
+      <a href="contact.html#faq">FAQs</a>
+    </div>
+
+  </div>
+  
+  <div class="contact2">
+      Contact
+  </div>
+  <p class="contact3">
+      <a href="mailto:mobilezoo@email.com">
+    mobilezoo@email.com</a>
+  </p>
+  <p class="contact3">
+      <a href="tel:08036482942">
+    08036482942</a>
+  </p>
+  <div class="footer-text">
+        © 2026 Mobile Zoo Exhibition. All Rights Reserved.
+    </div>
+</footer>
+</body>  
+</html>  
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const menuCheckbox = document.getElementById("menu-toggle");
+  const navLinks = document.querySelectorAll(".item");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+
+      const targetId = this.getAttribute("href");
+
+      // Only apply to internal links like #services
+      if (targetId.startsWith("#")) {
+        e.preventDefault(); // stop instant jump
+
+        // Close hamburger menu
+        if (menuCheckbox.checked) {
+          menuCheckbox.checked = false;
+        }
+
+        // Smooth scroll after menu closes
+        setTimeout(() => {
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        }, 300); // delay matches menu animation
+      }
+
+    });
+  });
+
+});
+</script>
