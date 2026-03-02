@@ -42,10 +42,10 @@ Book an appointment, ask a question, or just say hello. We'd love to hear from y
         <i class="fa-solid fa-envelope"></i>
     </div>
         <div class="contact-text">
-        <a href="mailto:mobilezoo@email.com">   
+        <a href="mailto:mobilezooexhibition@gmail.com">   
     
         <h4 class="big">Email</h4>
-        <p>mobilezooexhibition.com</p>
+        <p>mobilezooexhibition@gmail.com</p>
         </a>
     </div>
 </div>
@@ -70,8 +70,8 @@ Book an appointment, ask a question, or just say hello. We'd love to hear from y
 
     <div class="contact-texts">
         <h4 class="big">Hours</h4>
-        <p>Mon–Fri: 9AM – 9PM</p>
-        <p>Sat: 8AM – 9PM</p>
+        <p>Mon–Fri: 7AM – 9PM</p>
+        <p>Sat: 7AM – 9PM</p>
         <p class="last">Sun: 12PM – 10PM</p>
     </div>
 </div>
@@ -104,15 +104,14 @@ First Visit Special</p>
        
        <div class="info-cards">
            <div class="icon-circles2">
-               <i class="fa-solid fa-hand-holding-dollar"></i>
+               <i class="fa-solid fa-paw"></i>
            </div>
            
-       <h2>First Visit Special</h2>
-<p>First-time event hosts receive 15% off their first Mobile Zoo booking. Mention this offer when reserving your date!</p>
+       <h2>Interactive Wildlife Experience</h2>
+<p>Bring the excitement of live animals directly to your school or event with our Mobile Zoo Exhibition. Our trained handlers create engaging, hands-on learning experiences that inspire curiosity, respect for wildlife, and unforgettable memories for children and adults alike.</p>
        </div>
        
    </div>
-
 </section>
 
 <section id="faq" class="faq-section">
@@ -123,7 +122,7 @@ First Visit Special</p>
     <div class="faq-content">
       <h3>How long does a mobile zoo event last?</h3>
       <p>
-        Most exhibitions run between 1–2 hours depending on the number of students or guests.
+        Most exhibitions run between 3–4 hours depending on the number of students or guests.
         We customize the schedule to fit your event needs.
       </p>
     </div>
@@ -220,7 +219,7 @@ First Visit Special</p>
 
     <div class="footer-column">
       <h3>Support</h3>
-      <a href="contact.html#faq">FAQs</a>
+      <a href="#faq">FAQs</a>
     </div>
 
   </div>
@@ -229,8 +228,8 @@ First Visit Special</p>
       Contact
   </div>
   <p class="contact3">
-      <a href="mailto:mobilezoo@email.com">
-    mobilezoo@email.com</a>
+      <a href="mailto:mobilezooexhibition@gmail.com">
+    mobilezooexhibition@gmail.com</a>
   </p>
   <p class="contact3">
       <a href="tel:08036482942">
@@ -252,27 +251,41 @@ document.addEventListener("DOMContentLoaded", function () {
   navLinks.forEach(link => {
     link.addEventListener("click", function (e) {
 
-      const targetId = this.getAttribute("href");
+      const href = this.getAttribute("href");
 
-      // Only apply to internal links like #services
-      if (targetId.startsWith("#")) {
-        e.preventDefault(); // stop instant jump
+      if (!href) return;
 
-        // Close hamburger menu
-        if (menuCheckbox.checked) {
-          menuCheckbox.checked = false;
-        }
+      // If it's a same-page anchor like "#gallery"
+      if (href.startsWith("#")) {
 
-        // Smooth scroll after menu closes
-        setTimeout(() => {
-          const targetSection = document.querySelector(targetId);
-          if (targetSection) {
-            targetSection.scrollIntoView({
+        e.preventDefault();
+
+        const target = document.querySelector(href);
+
+        if (target) {
+
+          // Close menu first
+          if (menuCheckbox) {
+            menuCheckbox.checked = false;
+          }
+
+          setTimeout(() => {
+            target.scrollIntoView({
               behavior: "smooth",
               block: "start"
             });
-          }
-        }, 300); // delay matches menu animation
+          }, 400);
+        }
+
+      }
+
+      // If it's a different page (like index.html#gallery)
+      else {
+        if (menuCheckbox) {
+          menuCheckbox.checked = false;
+        }
+        // DO NOT prevent default
+        // Let browser navigate normally
       }
 
     });
