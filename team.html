@@ -94,9 +94,9 @@
 <a href="https://facebook.com/mobilezooexhibition" target="_blank" class="insta-link">
         <i class="fa-brands fa-facebook"></i>
     </a>
-<a href="https://tiktok.com/mobilezooexhibition" target="_blank" class="insta-link">
-        <i class="fa-brands fa-tiktok"></i>
-    </a>
+<a href="https://wa.me/2348036482942" target="_blank" class="insta-link">
+        <i class="fa-brands fa-whatsapp"></i>
+</a>
 </div>
 
 <div class="footer-container">
@@ -126,8 +126,8 @@
       Contact
   </div>
   <p class="contact3">
-      <a href="mailto:mobilezoo@email.com">
-    mobilezoo@email.com</a>
+      <a href="mailto:mobilezooexhibition@gmail.com">
+    mobilezooexhibition@gmail.com</a>
   </p>
   <p class="contact3">
       <a href="tel:08036482942">
@@ -149,27 +149,41 @@ document.addEventListener("DOMContentLoaded", function () {
   navLinks.forEach(link => {
     link.addEventListener("click", function (e) {
 
-      const targetId = this.getAttribute("href");
+      const href = this.getAttribute("href");
 
-      // Only apply to internal links like #services
-      if (targetId.startsWith("#")) {
-        e.preventDefault(); // stop instant jump
+      if (!href) return;
 
-        // Close hamburger menu
-        if (menuCheckbox.checked) {
-          menuCheckbox.checked = false;
-        }
+      // If it's a same-page anchor like "#gallery"
+      if (href.startsWith("#")) {
 
-        // Smooth scroll after menu closes
-        setTimeout(() => {
-          const targetSection = document.querySelector(targetId);
-          if (targetSection) {
-            targetSection.scrollIntoView({
+        e.preventDefault();
+
+        const target = document.querySelector(href);
+
+        if (target) {
+
+          // Close menu first
+          if (menuCheckbox) {
+            menuCheckbox.checked = false;
+          }
+
+          setTimeout(() => {
+            target.scrollIntoView({
               behavior: "smooth",
               block: "start"
             });
-          }
-        }, 300); // delay matches menu animation
+          }, 400);
+        }
+
+      }
+
+      // If it's a different page (like index.html#gallery)
+      else {
+        if (menuCheckbox) {
+          menuCheckbox.checked = false;
+        }
+        // DO NOT prevent default
+        // Let browser navigate normally
       }
 
     });
