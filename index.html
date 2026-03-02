@@ -18,9 +18,9 @@
         <label for="menu-toggle"></label>  
     </div>  <div class="items">  
         <a href="index.html" class="item">Home</a>
-    <a href="index.html#services" class="item">Services</a>  
-    <a href="index.html#story" class="item">Our Story</a>  
-    <a href="index.html#gallery" class="item">Gallery</a>  
+    <a href="#services" class="item">Services</a>  
+    <a href="#story" class="item">Our Story</a>  
+    <a href="#gallery" class="item">Gallery</a>  
     <a href="team.html" class="item">Team</a>  
     <a href="contact.html" class="item">Contact</a>    
 </div>
@@ -501,15 +501,15 @@
 
     <div class="footer-column">
       <h3>Services</h3>
-      <a href="index.html#services">Full Zoo Experience</a>
-      <a href="index.html#services">Petting Zoo</a>
-      <a href="index.html#services">World of Fishes</a>
+      <a href="#services">Full Zoo Experience</a>
+      <a href="#services">Petting Zoo</a>
+      <a href="#services">World of Fishes</a>
     </div>
 
     <div class="footer-column">
       <h3>Company</h3>
-      <a href="index.html#story">About Us</a>
-      <a href="index.html#gallery">Gallery</a>
+      <a href="#story">About Us</a>
+      <a href="#gallery">Gallery</a>
       <a href="contact.html">Contact</a>
     </div>
 
@@ -545,18 +545,47 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".item");
 
   navLinks.forEach(link => {
-    link.addEventListener("click", function () {
+    link.addEventListener("click", function (e) {
 
       const href = this.getAttribute("href");
 
-      // CLOSE MENU ALWAYS (for internal page links)
-      if (menuCheckbox && href && 
-          (href.includes("#") || href.includes("zoo.html"))) {
-        menuCheckbox.checked = false;
+      if (!href) return;
+
+      // If it's a same-page anchor like "#gallery"
+      if (href.startsWith("#")) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(href);
+
+        if (target) {
+
+          // Close menu first
+          if (menuCheckbox) {
+            menuCheckbox.checked = false;
+          }
+
+          setTimeout(() => {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }, 400);
+        }
+
+      }
+
+      // If it's a different page (like index.html#gallery)
+      else {
+        if (menuCheckbox) {
+          menuCheckbox.checked = false;
+        }
+        // DO NOT prevent default
+        // Let browser navigate normally
       }
 
     });
   });
 
 });
-</script>
+     </script>
