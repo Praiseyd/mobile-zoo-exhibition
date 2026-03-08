@@ -1,0 +1,180 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Zoo Exhibition</title>  
+    <link rel="stylesheet" href="zoo.css">  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>  
+<body>  
+    <div class="menu">  
+    <input type="checkbox" id="menu-toggle">  
+    <div class="menu-logo">  
+        <div class="zoo-logo">Mobile Zoo Exhibition  </div>
+        <a href="contact.html" class="buttons2">Book now</a>
+          
+        <label for="menu-toggle"></label>  
+    </div>  <div class="items">  
+        <a href="index.html" class="item">Home</a>
+    <a href="index.html#services" class="item">Services</a>  
+    <a href="index.html#story" class="item">Our Story</a>  
+    <a href="gallery.html" class="item">Gallery</a>  
+    <a href="team.html" class="item">Team</a>  
+    <a href="contact.html" class="item">Contact</a>    
+</div>
+</div>
+<section class="team1">
+    <div class="intro4">
+    <h1>Meet the Animals</h1>
+    </div>
+Take a glimpse into the exciting moments from our Mobile Zoo Exhibition.
+Our gallery showcases some of the animals and experiences that make each visit unforgettable.
+Explore the photos and see the zoo in action.
+</section>
+
+<section>
+    <div class="gallery">
+        <img src="Albino.jpg" alt="">
+        <img src="Alligator.jpg" alt="">
+        <img src="Rabbit.jpg" alt="">
+        <img src="Snake.jpg" alt="">
+        <img src="Snake2.jpg" alt="">
+        <img src="students.jpg" alt="">
+        <img src="Guineapig2.jpg" alt="">
+        <img src="cat2.jpg" alt="">
+        <img src="Snake5.jpg" alt="">
+        <img src="rabbit2.jpg" alt="">
+        <img src="Monkey4.jpg" alt="">
+        <img src="Snake8.jpg" alt="">
+        <img src="Fishes1.jpg" alt="">
+        <img src="Goose2.jpg" alt="">
+        <img src="Monkey3.jpg" alt="">
+        <img src="Rat3.jpg" alt="">
+        <img src="Goose3.jpg" alt="">
+        <img src="Snake6.jpg" alt="">
+        <img src="Rat4.jpg" alt="">
+        <img src="Snake7.jpg" alt="">
+    </div>
+</section>
+
+
+
+
+<footer class="end">
+    <div class="service2">
+        <h3>Mobile Zoo Exhibition </h3> 
+    </div>
+    <div class="into4">Mobile zoo exhibition services creating unforgettable wildlife experiences through safe, educational, and interactive animal encounters since 2015.</div>
+    
+    <div class="icons">
+        <a href="https://instagram.com/mobilezooschoolexhibition" target="_blank" class="insta-link">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+<a href="https://facebook.com/mobilezooschoolexhibition" target="_blank" class="insta-link">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+<a href="https://wa.me/2348036482942" target="_blank" class="insta-link">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</div>
+
+<div class="footer-container">
+
+    <div class="footer-column">
+      <h3>Services</h3>
+      <a href="#services">Full Zoo Experience</a>
+      <a href="#services">Petting Zoo</a>
+      <a href="#services">World of Fishes</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Company</h3>
+      <a href="#story">About Us</a>
+      <a href="#gallery">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Support</h3>
+      <a href="contact.html#faq">FAQs</a>
+    </div>
+
+  </div>
+  
+  <div class="contact2">
+      Contact
+  </div>
+  <p class="contact3">
+      <a href="mailto:mobilezooexhibition@gmail.com">
+    mobilezooexhibition@gmail.com</a>
+  </p>
+  <p class="contact3">
+      <a href="tel:08036482942">
+    08036482942</a>
+  </p>
+  <p class="contact3">
+      <a href="tel:08036482942">
+    08036482942</a>
+  </p>
+  <div class="footer-text">
+        © 2026 Mobile Zoo Exhibition. All Rights Reserved.
+    </div>
+</footer>
+</body>  
+</html>  
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const menuCheckbox = document.getElementById("menu-toggle");
+  const navLinks = document.querySelectorAll(".item");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+
+      const href = this.getAttribute("href");
+
+      if (!href) return;
+
+      // If it's a same-page anchor like "#gallery"
+      if (href.startsWith("#")) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(href);
+
+        if (target) {
+
+          // Close menu first
+          if (menuCheckbox) {
+            menuCheckbox.checked = false;
+          }
+
+          setTimeout(() => {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }, 400);
+        }
+
+      }
+
+      // If it's a different page (like index.html#story)
+      else {
+        if (menuCheckbox) {
+          menuCheckbox.checked = false;
+        }
+        // DO NOT prevent default
+        // Let browser navigate normally
+      }
+
+    });
+  });
+
+});
+</script>
