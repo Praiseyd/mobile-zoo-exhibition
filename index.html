@@ -1,6 +1,7 @@
  <!DOCTYPE html>  <html lang="en">  
 <head>  
-    <meta charset="UTF-8">  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile Zoo Exhibition</title>  
     <link rel="stylesheet" href="zoo.css">  
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
@@ -20,7 +21,7 @@
         <a href="index.html" class="item">Home</a>
     <a href="#services" class="item">Services</a>  
     <a href="#story" class="item">Our Story</a>  
-    <a href="#gallery" class="item">Gallery</a>  
+    <a href="gallery.html" class="item">Gallery</a>  
     <a href="team.html" class="item">Team</a>  
     <a href="contact.html" class="item">Contact</a>    
 </div>
@@ -134,6 +135,10 @@
   <a href="tel:08036482942" class="call-btn">
       <i class="fa-solid fa-phone"></i>
       08036482942</a>  
+
+     <a href="tel:08025000828" class="call-btn">
+      <i class="fa-solid fa-phone"></i>
+      08025000828</a>  
 </div>  
 </section>
 
@@ -379,6 +384,11 @@
       <i class="fa-solid fa-phone"></i>
       08036482942</a>  </div></button>
 
+ <div class="contact9">
+      <button class="call-btn"><a href="tel:08025000828" class="call-btn" >
+      <i class="fa-solid fa-phone"></i>
+      08025000828</a>  </div></button>
+
 </section>
 
 <section id="gallery">
@@ -388,14 +398,21 @@
     <div class="into3">See our amazing animals from mobile zoo shows and live encounters</div>
     
     <div class="gallery">
-        <img src="Albino.jpg" alt="">
-        <img src="Snake.jpg" alt="">
-        <img src="Alligator.jpg" alt="">
-        <img src="Rabbit.jpg" alt="">
-        <img src="Snake2.jpg" alt="">
+        <img src="Snake3.jpg" alt="">
+        <img src="Rat.jpg" alt="">
+        <img src="chameleon.jpg" alt="">
+        <img src="officials.jpg" alt="">
+        <img src="Rat2.jpg" alt="">
         <img src="Monkey.jpg" alt="">
+     <img src="Guineapig.jpg" alt="">
+     <img src="Snake4.jpg" alt="">
+     <img src="Monkey2.jpg" alt="">
+     <img src="Animals.jpg" alt="">
+     <img src="Goose.jpg" alt="">
+     <img src="crocodile.jpg" alt="">
     </div>
-    
+
+ <a href="gallery.html" class="Buttons">Discover the Experience</a> 
     <div class="insta">
     <p class="into2">Follow us on Instagram to see more happy pets!</p>
     
@@ -509,7 +526,7 @@
     <div class="footer-column">
       <h3>Company</h3>
       <a href="#story">About Us</a>
-      <a href="#gallery">Gallery</a>
+      <a href="gallery.html">Gallery</a>
       <a href="contact.html">Contact</a>
     </div>
 
@@ -531,12 +548,17 @@
       <a href="tel:08036482942">
     08036482942</a>
   </p>
+ <p class="contact3">
+      <a href="tel:08025000828">
+    08025000828</a>
+ </p>
   <div class="footer-text">
         © 2026 Mobile Zoo Exhibition. All Rights Reserved.
     </div>
 </footer>
 </body>  
 </html>  
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -551,7 +573,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!href) return;
 
-      // If it's a same-page anchor like "#gallery"
+      // If it's a same-page anchor like "#story"
       if (href.startsWith("#")) {
 
         e.preventDefault();
@@ -575,7 +597,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       }
 
-      // If it's a different page (like index.html#gallery)
+      // If it's a different page (like index.html#story)
       else {
         if (menuCheckbox) {
           menuCheckbox.checked = false;
