@@ -132,6 +132,98 @@ section {
     }
 }
 
+@media(max-width:481px){
+    .zoo-logo {
+    font-size: 24px;
+}
+
+.buttons {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: yellow;
+    border-radius: 10px;
+    color: black;
+}
+
+.button2 {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: green;
+    border-radius: 20px;
+    color: black;
+}
+
+.pic {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.pic img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.call-btn {
+    border-radius: 20px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bold;
+  background-color: green;
+  transition: background-color 0.15s;
+}
+
+.team1,
+.team4 {
+    padding: 20px 10px;
+}
+
+.intro4 {
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 18px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.gallery2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 60px; 
+    max-width: 900px;    
+    margin: 0px 30px;
+}
+
+.gallery2 img {
+    width: 220px !important;
+height: 220px !important;
+    object-fit: cover; 
+    border-radius: 20px !important;
+}
+
+.contact-new {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.contact-new-texts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    max-width: 900px;
+    margin: 0px 15px;
+}
+
+}
+
 .book {
     border-radius: 20px;
     padding: 10px;
