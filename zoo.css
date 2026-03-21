@@ -383,7 +383,7 @@ height: 220px !important;
     margin-right: 30px;
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 120px;
+    margin-bottom: 20px;
 }
 
 .contact9 {
@@ -736,7 +736,7 @@ height: 220px !important;
 
 .pic-titles {
     color: green;
-    margin-left: 20px;
+    text-align: center;
 }
 
 .team4 {
