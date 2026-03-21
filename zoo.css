@@ -114,11 +114,6 @@ section {
     padding: 30px 20px;
 }
 
-.gallery2 {
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-}
-
     #menu-toggle:checked ~ .items{
         max-height:600px;
     }
@@ -224,6 +219,7 @@ height: 220px !important;
 
 }
 
+
 .book {
     border-radius: 20px;
     padding: 10px;
@@ -290,6 +286,9 @@ height: 220px !important;
 
 .link1 {
     margin-top: 20px;
+        display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .stats {
@@ -389,11 +388,14 @@ height: 220px !important;
 
 .contact9 {
     font-weight: bold;
-    margin-left: 30px;
-    margin-right: 30px;
     text-align: center;
     margin-top: 20px ;
     margin-bottom: 20px;
+}
+
+.call-btns {
+    text-align: center;
+  margin-bottom: 100px;
 }
 
 .call-btn {
@@ -614,6 +616,7 @@ height: 220px !important;
     flex-direction: column;
     gap: 12px;
     min-width: 150px;
+        margin-bottom: 20px;
 }
 
 .footer-column h3 {
@@ -693,8 +696,8 @@ height: 220px !important;
 }
 
 .gallery2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    display: flex;
+    flex-direction: row; 
     gap: 60px; 
     max-width: 900px;
     margin: 0px 30px;
@@ -707,21 +710,27 @@ height: 220px !important;
     border-radius: 50%;
 }
 
+.picsssss {
+    display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;
+}
+
 .pic-text h3 {
-    margin-left: 45px;
     margin-bottom: 12px;
     margin-top: 20px;
+        text-align: center;
 }
 
 .pic-title {
     color: green;
+        text-align: center;
 }
 
 .pic-texts {
     color: grey;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-right: 35px;
     text-align: center;
 }
 
