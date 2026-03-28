@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Now - Mobile Zoo Exhibition</title>
+    <link rel="stylesheet" href="zoo.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/zoo.css" />
+
+    <link rel="stylesheet" href="css/booking.css" />
+  </head>
+  <body>
+    <!-- HERO -->
+    <section class="team1">
+      <div class="intro4">
+        <h1>Book Your Mobile Zoo Experience</h1>
+      </div>
+      <p>
+        Fill in the form below and we'll get back to you within 24 hours to
+        confirm your booking.
+      </p>
+    </section>
+    <!-- BOOKING FORM -->
+    <section class="booking-section">
+      <h1>Booking Details</h1>
+      <p>All fields marked <span style="color: red">*</span> are required</p>
+
+      <!-- Email reciever can be changed by the form ID-->
+      <form
+        id="booking-form"
+        action="https://formsubmit.co/ajax/mobilezooexhibition@gmail.com"
+        method="POST"
+      >
+        <input type="text" name="_honey" class="hp-field" />
+
+        <input type="hidden" name="_captcha" value="false" />
+
+        <input type="hidden" name="_subject" value="New Mobile Zoo Booking!" />
+        <!-- Auto-reply -->
+        <input
+          type="hidden"
+          name="_autoresponse"
+          value="Thank you for booking with Mobile Zoo Exhibition! We received your request and will confirm your booking within 24 hours. For urgent enquiries, call 08036482942 or 08025000828."
+        />
+        <div class="form-group">
+          <label>Full Name <span class="required">*</span></label>
+          <input
+            type="text"
+            name="Full Name"
+            id="name"
+            placeholder="e.g. John Doe"
+            required
+          />
+          <div class="error-msg" id="name-error">
+            Please enter your full name
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email Address <span class="required">*</span></label>
+            <input
+              type="email"
+              name="Email"
+              id="email"
+              placeholder="e.g. john@email.com"
+              required
+            />
+            <div class="error-msg" id="email-error">
+              Please enter a valid email
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number <span class="required">*</span></label>
+            <input
+              type="tel"
+              name="Phone"
+              id="phone"
+              placeholder="e.g. 08012345678"
+              required
+            />
+            <div class="error-msg" id="phone-error">
+              Please enter your phone number
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Select Service <span class="required">*</span></label>
+          <div class="service-options" id="services-group">
+            <div class="service-option">
+              <input
+                type="checkbox"
+                name="Service"
+                id="svc1"
+                value="Full Zoo Experience"
+              />
+              <label for="svc1">🦁 Full Zoo Experience</label>
+            </div>
+            <div class="service-option">
+              <input
+                type="checkbox"
+                name="Service"
+                id="svc2"
+                value="Petting Zoo"
+              />
+              <label for="svc2">🐰 Petting Zoo</label>
+            </div>
+            <div class="service-option">
+              <input
+                type="checkbox"
+                name="Service"
+                id="svc3"
+                value="World of Fishes"
+              />
+              <label for="svc3">🐠 World of Fishes</label>
+            </div>
+          </div>
+          <div class="error-msg" id="service-error">
+            Please select at least one service
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date <span class="required">*</span></label>
+            <input type="date" name="Date" id="date" required />
+            <div class="error-msg" id="date-error">
+              Please pick a future date
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Event Type</label>
+            <select name="Event Type" id="event-type">
+              <option value="" disabled selected>Select event type</option>
+              <option value="School Visit">School Visit</option>
+              <option value="Birthday Party">Birthday Party</option>
+              <option value="Community Event">Community Event</option>
+              <option value="Corporate Event">Corporate Event</option>
+              <option value="Festival">Festival</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Location / Venue <span class="required">*</span></label>
+          <input
+            type="text"
+            name="Location"
+            id="location"
+            placeholder="e.g. Greenfield Academy, Lekki, Lagos"
+            required
+          />
+          <div class="error-msg" id="location-error">
+            Please enter the event location
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Estimated Number of Guests</label>
+          <input
+            type="number"
+            name="Guests"
+            id="guests"
+            placeholder="e.g. 50"
+            min="1"
+          />
+        </div>
+        <div class="form-group">
+          <label>Additional Message</label>
+          <textarea
+            name="Message"
+            id="message"
+            placeholder="Any special requests or details..."
+            maxlength="500"
+          ></textarea>
+          <div class="char-count"><span id="char-num">0</span>/500</div>
+        </div>
+        <button type="submit" class="submit-btn" id="submit-btn">
+          <span class="spinner" id="spinner"></span>
+          <span id="btn-text">Submit Booking Request</span>
+        </button>
+      </form>
+      <div class="divider"><span>or book instantly</span></div>
+      <a href="#" id="whatsapp-link" class="whatsapp-btn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        Book via WhatsApp
+      </a>
+    </section>
+    <!-- CONTACT INFO -->
+    <section class="team4">
+      <div class="contact-new">
+        <h2>Other Ways to Reach Us</h2>
+      </div>
+      <div class="contact-new-text">
+        Have questions before booking? Reach out through any of these channels.
+      </div>
+      <div class="contact-item1">
+        <div class="contact-new-texts">
+          <div class="info-card">
+            <div class="icon-circles2">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <h2>Call Us</h2>
+            <p>
+              <a
+                href="tel:08036482942"
+                style="color: grey; text-decoration: none"
+                >08036482942</a
+              >
+            </p>
+            <p>
+              <a
+                href="tel:08025000828"
+                style="color: grey; text-decoration: none"
+                >08025000828</a
+              >
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="icon-circles2">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <h2>Email Us</h2>
+            <p>
+              <a
+                href="mailto:mobilezooexhibition@gmail.com"
+                style="color: grey; text-decoration: none"
+                >mobilezooexhibition@gmail.com</a
+              >
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="icon-circles2">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h2>WhatsApp</h2>
+            <p>
+              <a
+                href="https://wa.me/2348036482942"
+                target="_blank"
+                style="color: grey; text-decoration: none"
+                >Chat with us on WhatsApp</a
+              >
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="icon-circles2">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <h2>Follow Us</h2>
+            <p>
+              <a
+                href="https://instagram.com/mobilezooschoolexhibition"
+                target="_blank"
+                style="color: grey; text-decoration: none"
+                >@mobilezooschoolexhibition</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="contact-new">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="contact-new-text">
+        Quick answers to help you plan your booking.
+      </div>
+      <div class="faq-section">
+        <div class="faq-card">
+          <div class="faq-icon">?</div>
+          <div class="faq-content">
+            <div class="faq-question">
+              <h3>How far in advance should I book?</h3>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We recommend booking at least 1–2 weeks in advance to secure
+                your preferred date. However, we do accommodate last-minute
+                requests when possible.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-icon">?</div>
+          <div class="faq-content">
+            <div class="faq-question">
+              <h3>What areas do you cover?</h3>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We cover Lagos and surrounding areas. For locations outside
+                Lagos, please contact us directly to discuss logistics and any
+                additional fees.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-icon">?</div>
+          <div class="faq-content">
+            <div class="faq-question">
+              <h3>Is it safe for young children?</h3>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Absolutely! All our animals are well-trained and handled by
+                certified professionals. We follow strict safety protocols and
+                every session is supervised.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-icon">?</div>
+          <div class="faq-content">
+            <div class="faq-question">
+              <h3>How much does it cost?</h3>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Pricing depends on the service package and event size. Submit a
+                booking request or call us at 08036482942 for a personalized
+                quote.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-icon">?</div>
+          <div class="faq-content">
+            <div class="faq-question">
+              <h3>Can I choose which animals to display?</h3>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes! You can request specific animals based on the service
+                package you choose. Let us know your preferences in the message
+                field when booking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="end">
+      <div class="service2">
+        <h3>Mobile Zoo Exhibition</h3>
+      </div>
+      <div class="into4">
+        Mobile zoo exhibition services creating unforgettable wildlife
+        experiences through safe, educational, and interactive animal encounters
+        since 2015.
+      </div>
+      <div class="icons">
+        <a
+          href="https://instagram.com/mobilezooschoolexhibition"
+          target="_blank"
+          class="insta-link"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a
+          href="https://facebook.com/mobilezooschoolexhibition"
+          target="_blank"
+          class="insta-link"
+        >
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a
+          href="https://wa.me/2348036482942"
+          target="_blank"
+          class="insta-link"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Services</h3>
+          <a href="index.html#services">Full Zoo Experience</a>
+          <a href="index.html#services">Petting Zoo</a>
+          <a href="index.html#services">World of Fishes</a>
+        </div>
+        <div class="footer-column">
+          <h3>Company</h3>
+          <a href="index.html#story">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <a href="contact.html#faq">FAQs</a>
+        </div>
+      </div>
+      <div class="contact2">Contact</div>
+      <p class="contact3">
+        <a href="mailto:mobilezooexhibition@gmail.com"
+          >mobilezooexhibition@gmail.com</a
+        >
+      </p>
+      <p class="contact3">
+        <a href="tel:08036482942">08036482942</a>
+      </p>
+      <p class="contact3">
+        <a href="tel:08025000828">08025000828</a>
+      </p>
+      <div class="footer-text">
+        © 2026 Mobile Zoo Exhibition. All Rights Reserved.
+      </div>
+    </footer>
+    <!-- SUCCESS POPUP -->
+    <div class="success-overlay" id="success-overlay">
+      <div class="success-box">
+        <div class="check-circle">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h2>Booking Request Sent!</h2>
+        <p>
+          Thank you! We'll confirm your booking within 24 hours. Check your
+          email for a confirmation message.
+        </p>
+        <button onclick="closeSuccess()">Done</button>
+      </div>
+    </div>
+
+    <script src="js/booking.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/zoo.js"></script>
+  </body>
+</html>
