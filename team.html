@@ -10,22 +10,7 @@
 
 </head>  
 <body>  
-    <div class="menu">  
-    <input type="checkbox" id="menu-toggle">  
-    <div class="menu-logo">  
-        <div class="zoo-logo">Mobile Zoo Exhibition  </div>
-        <a href="contact.html" class="buttons2">Book now</a>
-        <label for="menu-toggle"></label>  
-    </div>  <div class="items">  
-        <a href="index.html" class="item">Home</a>
-    <a href="index.html#services" class="item">Services</a>  
-    <a href="index.html#story" class="item">Our Story</a>  
-    <a href="gallery.html" class="item">Gallery</a>  
-    <a href="team.html" class="item">Team</a>  
-    <a href="contact.html" class="item">Contact</a>  
-</div>
-</div>
-
+    
 <section class="team1">
     <div class="intro4">
         <h1>Meet Our Team</h1>
@@ -47,7 +32,7 @@
 <div class="gallery2">
         <div class="pic-text">
             <div class="picsssss">
-                <img src="Lanre.jpg" alt="">
+                <img src="photos/Lanre.jpg" alt="">
             </div>
             <h3>Lanre Williams</h3>
             <p class="pic-title">
@@ -61,7 +46,7 @@
 <div class="gallery2">
         <div class="pic-text">
             <div class="picsssss">
-                <img src="Jeffery.jpg" alt="">
+                <img src="photos/Jeffery.jpg" alt="">
             </div>
             <h3>Jeffery Silleth</h3>
             <p class="pic-titles">
@@ -72,7 +57,6 @@
             </p>
         </div>
     </div>
- 
 
 </section>
 
@@ -82,16 +66,16 @@
 </div>
 <div class="into3">Book an exhibition today and give children, schools, and families an unforgettable wildlife learning experience. First-time bookings enjoy special discounts!</div>
 <div class="contact">
-    <div class="contact9">
+<div class="contact9">
     <button class="call-btn"><a href="tel:08036482942" class="call-btn" >
       <i class="fa-solid fa-phone"></i>
       08036482942</a>  </button></div>
-
-    <div class="contact9">
+      
+      <div class="contact9">
       <button class="call-btn"><a href="tel:08025000828" class="call-btn" >
       <i class="fa-solid fa-phone"></i>
       08025000828</a>  </button></div>
-</div>
+      </div>
 </section>
 
 
@@ -102,15 +86,15 @@
     <div class="into4">Mobile zoo exhibition services creating unforgettable wildlife experiences through safe, educational, and interactive animal encounters since 2015.</div>
     
     <div class="icons">
-        <a href="https://instagram.com/mobilezooexhibition" target="_blank" class="insta-link">
+        <a href="https://instagram.com/mobilezooschoolexhibition" target="_blank" class="insta-link">
         <i class="fa-brands fa-instagram"></i>
     </a>
-<a href="https://facebook.com/mobilezooexhibition" target="_blank" class="insta-link">
+<a href="https://facebook.com/mobilezooschoolexhibition" target="_blank" class="insta-link">
         <i class="fa-brands fa-facebook"></i>
     </a>
 <a href="https://wa.me/2348036482942" target="_blank" class="insta-link">
         <i class="fa-brands fa-whatsapp"></i>
-</a>
+    </a>
 </div>
 
 <div class="footer-container">
@@ -125,7 +109,7 @@
     <div class="footer-column">
       <h3>Company</h3>
       <a href="index.html#story">About Us</a>
-      <a href="gallery.html">Gallery</a>
+      <a href=.htmlery.html">Gallery</a>
       <a href="contact.html">Contact</a>
     </div>
 
@@ -147,65 +131,17 @@
       <a href="tel:08036482942">
     08036482942</a>
   </p>
-    <p class="contact3">
+   <p class="contact3">
       <a href="tel:08025000828">
     08025000828</a>
-    </p>
+  </p>
   <div class="footer-text">
         © 2026 Mobile Zoo Exhibition. All Rights Reserved.
     </div>
 </footer>
 </body>  
+
+<script src="zoo.js"></script>
+<script src="menu.js"></script>
 </html>  
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const menuCheckbox = document.getElementById("menu-toggle");
-  const navLinks = document.querySelectorAll(".item");
-
-  navLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
-
-      const href = this.getAttribute("href");
-
-      if (!href) return;
-
-      // If it's a same-page anchor like "#storu"
-      if (href.startsWith("#")) {
-
-        e.preventDefault();
-
-        const target = document.querySelector(href);
-
-        if (target) {
-
-          // Close menu first
-          if (menuCheckbox) {
-            menuCheckbox.checked = false;
-          }
-
-          setTimeout(() => {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-          }, 400);
-        }
-
-      }
-
-      // If it's a different page (like index.html#story)
-      else {
-        if (menuCheckbox) {
-          menuCheckbox.checked = false;
-        }
-        // DO NOT prevent default
-        // Let browser navigate normally
-      }
-
-    });
-  });
-
-});
-</script>
