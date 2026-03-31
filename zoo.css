@@ -424,6 +424,11 @@ section {
   margin-bottom: 100px;
 }
 
+.call-btns3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .call-btn {
   border-radius: 20px;
   border: none;
